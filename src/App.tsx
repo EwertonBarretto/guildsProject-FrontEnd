@@ -1,9 +1,14 @@
-import Login from './Pages/Login/Login';
+import GlobalStyle from './styles/global';
+import RoutesApp from './routes';
+import { AuthProvider } from './context/auth';
 
 function App() {
   return (
-    <div className="App">
-      <Login />
+    <div>
+      <AuthProvider>
+        <RoutesApp />
+        <GlobalStyle />
+      </AuthProvider>
     </div>
   );
 }

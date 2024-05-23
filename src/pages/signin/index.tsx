@@ -1,8 +1,16 @@
 import React from 'react';
-import './LoginForm.css';
 import { FaUser, FaLock } from "react-icons/fa";
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
+import './style.css';
+import SelfRegister from '../selfRegister';
+import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
+const Signin = () => {
+    const { signed, handleSingin }: any = useContext(AuthContext);
+
+    console.log('Login', signed);
+
     return (
         <div className='wrapper'>
             <form action=''>
@@ -16,11 +24,11 @@ const LoginForm = () => {
                     <FaLock className='icon' />
                 </div>
 
-                <button type='submit'>Login</button>
+                <button type='submit' onClick={handleSingin}>Login</button>
 
                 <div className="register">
-                    <p>Não tem conta? <a href='#'> Cadastre-se</a></p>
-                    <a href='#'> Esqueci minha senha</a>
+                    <p > Não tem conta? <Link to='/selfRegister'>Cadastre-se</Link> </p>
+                    <Link to='/forgotPassword'> Esqueci minha senha</Link>
                 </div>
             </form>
         </div>
@@ -28,4 +36,4 @@ const LoginForm = () => {
     )
 };
 
-export default LoginForm;
+export default Signin;

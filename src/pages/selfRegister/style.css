@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../Assets/Login/Background.jpg') no-repeat;
+    background: url('../../components/assets/login/Background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -101,6 +101,11 @@ body {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
+}
+
+.wrapper .validationCode {
+    text-align: center;
+    padding: 20px 45px 20px 20px;
 }
 
 .register a {
