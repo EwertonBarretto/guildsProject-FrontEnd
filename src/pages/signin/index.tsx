@@ -3,8 +3,9 @@ import { FaUser, FaLock } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth';
 import './style.css';
-import SelfRegister from '../selfRegister';
 import { Link } from 'react-router-dom';
+import ModalImage from '../../components/modalImage/modalImage';
+import InfoSelfRegister from '../../components/assets/selfRegister/InfoSelfRegister.png';
 
 const Signin = () => {
     const { signed, handleSingin }: any = useContext(AuthContext);

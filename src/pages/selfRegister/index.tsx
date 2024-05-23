@@ -3,6 +3,7 @@ import './style.css';
 import { CiCircleInfo } from "react-icons/ci";
 import { GeneratorTextRandom } from '../../services/utils';
 import InfoSelfRegister from '../../components/assets/selfRegister/InfoSelfRegister.png'
+import ModalImage from '../../components/modalImage/modalImage';
 
 const SelfRegister = () => {
     const [nome, setNome] = useState('');
@@ -41,10 +42,7 @@ const SelfRegister = () => {
                         <br />
                         <span>{codigo}</span>
                         <span>
-                            <CiCircleInfo
-
-                                onClick={() => window.open('../../components/assets/selfRegister/InfoSelfRegister.png', '_blank')}
-                                style={{ cursor: 'pointer', marginLeft: '10px' }} />
+                            <ModalImage image={InfoSelfRegister} button={<CiCircleInfo color='red' style={{ cursor: 'pointer', marginLeft: '10px' }} />} classButtonOpen={'buttonTransparence'}></ModalImage>
                         </span>
                         <br />
                         <br />
