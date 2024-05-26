@@ -30,7 +30,7 @@ const ModalImage = ({ image, button, classButtonOpen }: IModalInterface) => {
                 &times;
               </button>
               <div className="content">
-                <img src={image} alt="teste"></img>
+                <img src={image} alt="teste" className="image"></img>
               </div>
             </div>
           )}

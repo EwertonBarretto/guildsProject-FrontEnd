@@ -10,8 +10,6 @@ import InfoSelfRegister from '../../components/assets/selfRegister/InfoSelfRegis
 const Signin = () => {
     const { signed, handleSingin }: any = useContext(AuthContext);
 
-    console.log('Login', signed);
-
     return (
         <div className='wrapper'>
             <form action=''>

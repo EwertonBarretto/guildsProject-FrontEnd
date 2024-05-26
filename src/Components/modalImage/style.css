@@ -42,3 +42,7 @@
     cursor: pointer;
     width: auto !important;
 }
+
+.image {
+    width: 100%;
+}
