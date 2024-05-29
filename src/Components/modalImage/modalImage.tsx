@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Popup from "reactjs-popup";
-import InfoSelfRegister from '../assets/selfRegister/InfoSelfRegister.png';
 import './style.css';
 
 interface IModalInterface {

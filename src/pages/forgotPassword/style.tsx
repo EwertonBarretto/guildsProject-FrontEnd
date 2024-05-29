@@ -1,3 +1,6 @@
+import styled from 'styled-components';
+
+export const StyledForgot = styled.div`
 .input-box .emailIcon {
     position: absolute;
     right: 20px;
@@ -26,3 +29,4 @@
 .remenber-forgot a:hover {
     text-decoration: underline;
 }
+`

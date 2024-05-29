@@ -1,21 +1,19 @@
 import { MdEmail } from "react-icons/md";
-import './style.css';
+import { StyledForgot } from './style';
 import { useState } from "react";
+import { WrapperLoginPages } from "../../styles/styles_global";
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
 
     return (
-        <div className='wrapper'>
-            <form action=''>
-                <h1>Login</h1>
-                <div className='input-box'>
-                    <input type='Email' placeholder='Email' required></input>
-                    <MdEmail className='emailIcon' />
-                </div>
-                <button type='submit' >Enviar</button>
-            </form>
-        </div>
+        <WrapperLoginPages>
+            <div className='wrapper'>
+                <StyledForgot>
+                    <label>EM CONSTRUÇÂO</label>
+                </StyledForgot>
+            </div>
+        </WrapperLoginPages>
     )
 }
 

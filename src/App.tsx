@@ -1,15 +1,11 @@
-import GlobalStyle from './styles/global';
 import RoutesApp from './routes';
-import { AuthProvider } from './context/auth';
+import { AuthProvider } from './hooks/useAuth';
 
 function App() {
   return (
-    <div>
-      <AuthProvider>
-        <RoutesApp />
-        <GlobalStyle />
-      </AuthProvider>
-    </div>
+    <AuthProvider>
+      <RoutesApp />
+    </AuthProvider>
   );
 }
 

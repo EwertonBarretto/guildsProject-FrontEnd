@@ -14,5 +14,16 @@ export const Container = styled.div`
     margin-top: 32px;
     margin-left: 32px;
     cursor: pointer;
+  }`;
+
+export const HeaderContainer = styled.header`
+  width:100%;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  a {
+      color: #fff;
+      text-decoration: none;
   }
 `;

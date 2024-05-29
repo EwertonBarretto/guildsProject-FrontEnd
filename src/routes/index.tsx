@@ -2,14 +2,16 @@ import { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signin from "../pages/signin";
 import Home from "../pages/home";
-import Signup from "../pages/signup";
 import SelfRegister from "../pages/selfRegister";
 import ForgotPassword from "../pages/forgotPassword";
+import { useAuth } from "../hooks/useAuth";
+import Layout from "../pages/layout";
 
 const Private = ({ Item }: any) => {
-    const signed = false;
+    const { signed } = useAuth();
 
-    return signed > true ? <Item /> : <Signin />;
+    console.log(signed, 'route')
+    return signed === true ? <Item /> : <Signin />;
 }
 
 const RoutesApp = () => {
@@ -17,12 +19,13 @@ const RoutesApp = () => {
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route path="/home" element={<Private Item={Home} />} />
                     <Route path="/" element={<Signin />} />
-                    <Route path="/signup" element={<Signup />} />
                     <Route path="*" element={<Signin />} />
                     <Route path="/selfRegister" element={<SelfRegister />} />
                     <Route path="/forgotPassword" element={<ForgotPassword />} />
+                    <Route path="/dashboard" element={<Private Item={Layout} />} >
+                        <Route path="/dashboard/home" element={<Home />} />
+                    </Route>
                 </Routes>
             </Fragment>
         </BrowserRouter>
