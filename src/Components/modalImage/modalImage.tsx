@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Popup from "reactjs-popup";
-import './style.css';
+import { ModalImageStyle, ButtonConfig } from './style';
+//import './st.css';
 
 interface IModalInterface {
   image: any,
@@ -14,7 +15,12 @@ const ModalImage = ({ image, button, classButtonOpen }: IModalInterface) => {
 
   return (
     <>
-      <button className={classButtonOpen ? classButtonOpen : 'button'} type="button" onClick={() => setOpen(!open)}> {button} </button>
+      {classButtonOpen ?
+        <ButtonConfig onClick={() => setOpen(!open)}> {button}
+          {/* <button type="button" onClick={() => setOpen(!open)}> {button} </button> */}
+        </ButtonConfig> :
+        <button className='button' type="button" onClick={() => setOpen(!open)}> {button} </button>
+      }
       <Popup
         onClose={closeModal}
         open={open}
@@ -24,14 +30,16 @@ const ModalImage = ({ image, button, classButtonOpen }: IModalInterface) => {
       >
         <>
           {(
-            <div className="modal">
-              <button className="close" onClick={closeModal}>
-                &times;
-              </button>
-              <div className="content">
-                <img src={image} alt="teste" className="image"></img>
+            <ModalImageStyle>
+              <div className="modal">
+                <button className="close" onClick={closeModal}>
+                  &times;
+                </button>
+                <div className="content">
+                  <img src={image} alt="teste" className="image"></img>
+                </div>
               </div>
-            </div>
+            </ModalImageStyle>
           )}
         </>
       </Popup>

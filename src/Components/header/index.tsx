@@ -5,15 +5,19 @@ import Sidebar from './sidebar';
 import { Link } from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({ handleSideBar }: any) => {
     const [sidebar, setSidebar] = useState(true)
 
-    const showSiderbar = () => setSidebar(!sidebar)
+    const showSiderbar = () => {
+        const valueNow = !sidebar;
+        handleSideBar(valueNow);
+        setSidebar(valueNow);
+    }
 
     return (
         <Container>
             <FaBars onClick={showSiderbar} />
-            {sidebar && <Sidebar active={setSidebar} />}
+            {sidebar && <Sidebar active={showSiderbar} />}
 
             <HeaderContainer>
                 <h1> <Link to={'/dashboard/home'}>
